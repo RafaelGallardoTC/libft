@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 22:15:32 by rgallard          #+#    #+#             */
-/*   Updated: 2020/04/09 02:17:31 by rgallard         ###   ########.fr       */
+/*   Updated: 2019/12/01 17:03:31 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void			*ft_calloc(size_t count, size_t size);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strlen(const char *str);
-size_t			ft_nbrlen(long long int n, int base);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *s1);
@@ -55,10 +54,6 @@ char			*ft_strncpy(char *dst, const char *src, size_t len);
 char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void			ft_putchar(int c);
-void			ft_putnbr(int n);
-void			ft_putstr(char *s);
-int				ft_putstr_len(const char *str, size_t len);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);

@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 05:45:18 by rgallard          #+#    #+#             */
-/*   Updated: 2019/11/18 09:41:51 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/07/08 19:02:47 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (len != 0)
 		while (s1[start + len - 1] && ft_strchr(set, s1[start + len - 1]))
 			len--;
-	if (!(clean = (char*)malloc(sizeof(char) * (len + 1))))
+	clean = (char *)malloc(sizeof(char) * (len + 1));
+	if (!clean)
 		return (NULL);
 	ft_strncpy(clean, s1 + start, len);
 	clean[len] = '\0';

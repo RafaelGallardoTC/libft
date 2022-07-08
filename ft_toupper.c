@@ -6,13 +6,16 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 16:59:35 by rgallard          #+#    #+#             */
-/*   Updated: 2019/11/18 00:52:05 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/07/08 18:57:11 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	return (c >= 97 && c <= 122 ? 65 + (c - 97) : c);
+	if (c >= 97 && c <= 122)
+		return (65 + (c - 97));
+	else
+		return (c);
 }

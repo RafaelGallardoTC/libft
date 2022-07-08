@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 16:07:02 by rgallard          #+#    #+#             */
-/*   Updated: 2019/11/18 00:53:17 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/07/08 16:27:45 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,16 @@ char	*ft_strdup(const char *s1)
 	size = 0;
 	while (s1[size])
 		++size;
-	if (!(new = malloc(sizeof(char) * (size + 1))))
+	new = (char *)malloc(sizeof(char) * (size + 1));
+	if (!new)
 		return (NULL);
 	i = 0;
-	while ((new[i] = s1[i]))
+	new[i] = s1[i];
+	while (new[i])
+	{
 		i++;
+		new[i] = s1[i];
+	}
 	new[i] = '\0';
 	return (new);
 }

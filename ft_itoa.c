@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 00:02:44 by rgallard          #+#    #+#             */
-/*   Updated: 2019/11/25 00:02:46 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/07/08 18:39:57 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,24 @@ static	size_t	nb_len(long n)
 		++i;
 		n *= -1;
 	}
-	while (++i && (n = n / 10) > 0)
-		;
+	n = n / 10;
+	while (++i && (n > 0))
+		n = n / 10;
 	return (i);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	size_t		len;
-	char		*str;
 	size_t		i;
+	char		*str;
 	long		nb;
 
 	nb = n;
 	i = 0;
 	len = nb_len(nb);
-	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
 	str[len] = '\0';
 	if (nb < 0)

@@ -29,15 +29,10 @@ SRCS	= ft_atoi.c \
 		ft_split.c \
 		ft_itoa.c \
 		ft_strmapi.c \
-		ft_putchar.c \
-		ft_putstr.c \
-		ft_putstr_len.c \
-		ft_putnbr.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-		ft_nbrlen.c \
 
 BNSRCS = ft_lstnew.c \
 		ft_lstadd_front.c \
@@ -65,24 +60,24 @@ RM		= rm -f
 CFLAGS	= -Wall -Werror -Wextra
 
 .c.o:
-			@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME):	$(OBJS)
-			@ar rc $(NAME) $(OBJS)
-			@ranlib $(NAME)
+			ar rc $(NAME) $(OBJS)
+			ranlib $(NAME)
 
 bonus:		$(BNOBJS) $(OBJS)
-			@ar rc $(NAME) $(BNOBJS)
-			@ranlib $(NAME)
+			ar rc $(NAME) $(BNOBJS)
+			ranlib $(NAME)
 
 all:		$(NAME)
 
 clean:
-			@$(RM) $(OBJS)
-			@$(RM) $(BNOBJS)
+			$(RM) $(OBJS)
+			$(RM) $(BNOBJS)
 
 fclean:		clean
-			@$(RM) $(NAME)
+			$(RM) $(NAME)
 
 re:			fclean all
 

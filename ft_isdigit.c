@@ -6,13 +6,16 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 15:52:04 by rgallard          #+#    #+#             */
-/*   Updated: 2019/11/06 16:19:11 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/07/08 18:30:33 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-	return (c >= '0' && c <= '9' ? 1 : 0);
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }

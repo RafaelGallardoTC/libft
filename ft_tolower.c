@@ -6,13 +6,16 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 17:56:27 by rgallard          #+#    #+#             */
-/*   Updated: 2019/11/13 23:49:22 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/07/08 18:50:37 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
-	return (c >= 'A' && c <= 'Z' ? 'a' + (c - 'A') : c);
+	if (c >= 'A' && c <= 'Z')
+		return ('a' + (c - 'A'));
+	else
+		return (c);
 }

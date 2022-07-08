@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:52:03 by rgallard          #+#    #+#             */
-/*   Updated: 2019/11/13 20:28:48 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/07/08 16:28:46 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char ch;
+	char	ch;
 
 	ch = (char)c;
 	while (*s != ch)

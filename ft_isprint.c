@@ -6,13 +6,16 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 16:36:29 by rgallard          #+#    #+#             */
-/*   Updated: 2019/11/06 16:42:33 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/07/08 18:31:09 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
-	return (c >= ' ' && c <= '~' ? 1 : 0);
+	if (c >= ' ' && c <= '~')
+		return (1);
+	else
+		return (0);
 }
