@@ -6,7 +6,7 @@
 /*   By: rgallard <rgallard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 17:45:24 by rgallard          #+#    #+#             */
-/*   Updated: 2022/07/08 15:23:59 by rgallard         ###   ########.fr       */
+/*   Updated: 2022/07/12 16:57:56 by rgallard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,21 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
 	const char	*s;
 	size_t		n;
+	size_t		len_src;
 
 	s = src;
 	n = dstsize;
+	len_src = ft_strlen(src);
 	if (!(dst && src))
 		return (0);
-	if (n != 0)
+	if (len_src + 1 < dstsize)
 	{
-		while (--n != 0)
-		{
-			*dst++ = *s++;
-			if (*dst == 0)
-				break ;
-		}
+		ft_memcpy(dst, src, len_src + 1);
 	}
-	if (n == 0)
+	else if (dstsize != 0)
 	{
-		if (dstsize != 0)
-			*dst = '\0';
-		while (*s++)
-			;
+		ft_memcpy(dst, src, dstsize - 1);
+		dst[dstsize - 1] = '\0';
 	}
-	return (s - src - 1);
+	return (len_src);
 }
